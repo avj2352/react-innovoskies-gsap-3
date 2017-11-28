@@ -1,0 +1,72 @@
+$button-grey:#777;
+
+//Pseudo-class are special state of a selector
+.btn{    
+    position: relative; // We are making the button relative so that the pseudo-element can be absolute and behind this button                  
+    margin-top: 20px;
+    display: inline-block;
+    padding:10px 40px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    text-decoration: none;
+              
+    //:link is a special state of the button selector        
+    &:link{
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+    //:visited is a special state of the button selector
+    &:visited{ 
+        transition: all .2s; // Since this is the default state - we are telling to animate by default HERE !!                       
+    }
+    &:hover{
+        transform: translateY(-4px);
+        box-shadow: 0 10px 20px rgba(0,0,0,.2);//offset in the x y direction, blur,
+        &::after{
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }//end:hover
+    &:active{
+        transform: translateY(-2px);
+        box-shadow: 0 5px 5px rgba(0,0,0,.2);//offset in the x y direction, blur,
+    }
+    &-white{
+        background-color: white;
+        color: $button-grey;
+        &::after{
+            background-color: white;            
+        }    
+    }//end:-white
+
+    &-animated{
+        animation: moveInBottom .5s ease-out .75s; 
+        animation-fill-mode: backwards; //It will automatically apply the styles 0% before the animation begins
+    }//end:-animated
+
+    //Pseudo element - virtual elements needs a content AND display property
+    //By Default the content inside the after pseudo-element is treated as a CHILD of the enclosing element
+    &::after{
+        content:"";
+        display: inline-block;
+        width: 100%; // This makes the virtual element the same dimension as that of the parent element.
+        height: 100%;
+        border-radius: 100px;
+        position: absolute;
+        top:0;
+        left:0;
+        z-index: -1; //Commenting this line, you will see that it's ahead of the button :)
+        transition: all .4s; //since this is the initial virtual dom state
+    }//end::after
+}//end:.btn
+
+@keyframes moveInBottom {
+    0%{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100%{
+        opacity: 1;        
+        transform: translate(0);
+    }
+}

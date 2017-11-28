@@ -1,8 +1,119 @@
-$light-green: #7ed56f;
+$light-green: rgba(126,213,111,0.8);
 $medium-green: #55c57a;
-$dark-green: #28b485;
+$dark-green: rgba(40,180,131,0.8);
+$button-grey:#777;
 
 .header{
+    position: relative;
     height:95vh; // At every point the box should 95 of the view port height
-    background-image: url('../../assets/img/hero.jpg')
+    background-image: linear-gradient(to right, 
+    $light-green,
+    $dark-green),
+    url('./../../assets/img/innovoskies-background-image.jpg'); // Adding gradient and then the image
+
+    background-size: cover; // Always try to fit the image inside the element
+    background-position: top; //The top of the image always stays on top, the bottom can get cropped
+
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);  //Adding a polygon so that the element will still get a shape
+    // clip-path:polygon(50% 0, 100% 100%, 0 100%);
+
+    .logo-box{
+        position: absolute;
+        top:40px;
+        left:40px;
+
+        .logo{
+            width: 50%;
+            height: auto;
+            //Invoking Animation
+            animation-name: fadeIn;
+            animation-duration: 1s;
+            animation-timing-function: ease-in;
+        }
+    }
+
+    .text-box{
+
+        position: absolute;
+        top:45%; // This will move the entire box from top
+        left:50%; //This will move the entire box to left
+        transform: translate(-50%,-50%);
+        text-align: center;
+        
+        .heading-primary{
+            color: #fff;
+            text-transform: uppercase;   
+            backface-visibility: hidden;    //This is a fix for animation jerk caused in css3. this causes the bacface ppty to be hidden
+            margin-bottom: 10px;
+            &-main{
+                display: block;
+                font-size: 60px;
+                font-weight: 400;
+                letter-spacing: 25px;
+                //Invoking Animation
+                animation-name: moveInLeft;
+                animation-duration: 2s;
+                animation-timing-function: ease-in-out;
+                // animation-iteration-count: 3;
+                // animation-delay: 3s;
+            }
+            &-sub{
+                margin-top: 20px;
+                text-align: center;
+                display: block;
+                font-size: 20px;
+                font-weight: 600;
+                letter-spacing: 22px;
+                //Invoking Animation
+                animation-name: moveInRight;
+                animation-duration: 2s;
+                animation-timing-function: ease-in-out;
+            }
+        }
+    }//end:.text-box
 }//end:class-header
+
+
+//Animations part - for main and sub spans
+// NOTE: Browsers are optimized for 2 main propertis - opacity and transform ppty
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px); //We want it to animate in the X-direction
+    }
+    
+    60% {        
+        transform: translateX(10px); //We want it to animate in the X-direction
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translate(0); //Its going to look exactly the same state
+    }
+}//end:moveInLeft
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px); //We want it to animate in the X-direction
+    }
+    
+    60% {        
+        transform: translateX(-10px); //We want it to animate in the X-direction
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translate(0); //Its going to look exactly the same state
+    }
+}//end:moveInRight
+
+@keyframes fadeIn{
+    0% {
+        opacity: 0;        
+    }
+
+    100% {
+        opacity: 1;        
+    }
+}//end:fadeIn
