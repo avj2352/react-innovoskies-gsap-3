@@ -88,3 +88,10 @@
 - Peter Collingridge's SVG Editor
 - SVGO / SVGO-GUI
 
+# Advanced CSS and SASS
+
+## Reference Links
+
+- [Advanced CSS Course Github link](https://github.com/jonasschmedtmann/advanced-css-course)
+- [Jona's Resource Page](http://codingheroes.io/resources/)
+
