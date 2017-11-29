@@ -29,6 +29,25 @@
     background-color: #29b680;
     color: white; }
     .btn-green::after {
+      background-color: #29b680;
+      color: white; }
+  .btn-blue {
+    background-color: #2770d6;
+    color: white; }
+    .btn-blue::after {
+      background-color: #2770d6;
+      color: white; }
+  .btn-red {
+    background-color: #c91818;
+    color: white; }
+    .btn-red::after {
+      background-color: #c91818;
+      color: white; }
+  .btn-gold {
+    background-color: #ecb24c;
+    color: white; }
+    .btn-gold::after {
+      background-color: #ecb24c;
       color: white; }
   .btn-animated {
     animation: moveInBottom .5s ease-out .75s;

@@ -1,7 +1,9 @@
 $button-grey:#777;
-$dark-green: rgb(41, 182, 128);
-$medium-green: #19944c;
-$light-green: rgba(126,213,111,0.8);
+$button-green: rgb(41, 182, 128);
+$button-blue: rgb(39, 112, 214);
+$button-red: rgb(201, 24, 24);
+$button-gold: rgb(236, 178, 76);
+
 
 //Pseudo-class are special state of a selector
 .btn{    
@@ -34,6 +36,8 @@ $light-green: rgba(126,213,111,0.8);
         transform: translateY(-2px);
         box-shadow: 0 5px 5px rgba(0,0,0,.2);//offset in the x y direction, blur,
     }
+
+    //NOTE: This is the place where you add new colors, to button element
     &-white{
         background-color: white;
         color: $button-grey;
@@ -43,12 +47,42 @@ $light-green: rgba(126,213,111,0.8);
     }//end:-white
 
     &-green{
-        background-color: $dark-green;
+        background-color: $button-green;
         color: white;
         &::after{
+            background-color: $button-green;
             color: white;            
         }    
     }//end:-green
+
+    &-blue{
+        background-color: $button-blue;
+        color: white;
+        &::after{
+            background-color: $button-blue;
+            color: white;            
+        }    
+    }//end:-blue
+
+    &-red{
+        background-color: $button-red;
+        color: white;
+        &::after{
+            background-color: $button-red;
+            color: white;            
+        }    
+    }//end:-red
+
+    &-gold{
+        background-color: $button-gold;
+        color: white;
+        &::after{
+            background-color: $button-gold;
+            color: white;            
+        }    
+    }//end:-gold
+
+    //Place where you add new colors, to button element - ends here
 
     &-animated{
         animation: moveInBottom .5s ease-out .75s; 

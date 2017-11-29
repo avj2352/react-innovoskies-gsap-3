@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './header.css';
 import logo from './../../assets/img/innovo_logo.png';
-import ButtonWhite  from './../button-white/button-white';
+import Button  from './../button/button';
 
 class Header extends Component{
     render(){
@@ -14,8 +14,8 @@ class Header extends Component{
                     <h1 className="heading-primary">
                         <span className="heading-primary-main">Innovoskies</span>
                         <span className="heading-primary-sub">welcomes you</span>
-                    </h1>
-                    <ButtonWhite text="Explore !" color="white"></ButtonWhite>
+                    </h1>                    
+                    <Button text="Explore !" color="white"></Button>
                 </div>
             </header>
         );

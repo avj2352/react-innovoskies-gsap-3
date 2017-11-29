@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import classnames from 'classnames';
-import './button-white.css';
-class ButtonWhite extends Component{
+import './button.css';
+class Button extends Component{
 
     constructor(props,context){
         super(props,context);
@@ -13,13 +13,16 @@ class ButtonWhite extends Component{
             'btn':true,
             'btn-animated':true,
             'btn-white':color=='white',
-            'btn-green':color=='green'
+            'btn-green':color=='green',
+            'btn-blue':color=='blue',
+            'btn-red':color=='red',
+            'btn-gold':color=='gold',
         })
         return(
             <a href="#" className={buttonClass}>{text}</a>
         );
     }//end:render
 
-}//end:ButtonWhite
+}//end:Button
 
-export default ButtonWhite;
+export default Button;
