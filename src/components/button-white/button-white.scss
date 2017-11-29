@@ -1,4 +1,7 @@
 $button-grey:#777;
+$dark-green: rgb(41, 182, 128);
+$medium-green: #19944c;
+$light-green: rgba(126,213,111,0.8);
 
 //Pseudo-class are special state of a selector
 .btn{    
@@ -38,6 +41,14 @@ $button-grey:#777;
             background-color: white;            
         }    
     }//end:-white
+
+    &-green{
+        background-color: $dark-green;
+        color: white;
+        &::after{
+            color: white;            
+        }    
+    }//end:-green
 
     &-animated{
         animation: moveInBottom .5s ease-out .75s; 

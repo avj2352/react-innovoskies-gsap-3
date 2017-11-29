@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import classnames from 'classnames';
 import './button-white.css';
 class ButtonWhite extends Component{
 
@@ -7,9 +8,15 @@ class ButtonWhite extends Component{
     }//end:constructor
 
     render(){
-        const {text} = this.props;
+        const {text,color} = this.props;
+        let buttonClass = classnames({
+            'btn':true,
+            'btn-animated':true,
+            'btn-white':color=='white',
+            'btn-green':color=='green'
+        })
         return(
-            <a href="#" className="btn btn-white btn-animated">{text}</a>
+            <a href="#" className={buttonClass}>{text}</a>
         );
     }//end:render
 

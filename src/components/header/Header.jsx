@@ -15,7 +15,7 @@ class Header extends Component{
                         <span className="heading-primary-main">Innovoskies</span>
                         <span className="heading-primary-sub">welcomes you</span>
                     </h1>
-                    <ButtonWhite text="Explore !"></ButtonWhite>
+                    <ButtonWhite text="Explore !" color="white"></ButtonWhite>
                 </div>
             </header>
         );

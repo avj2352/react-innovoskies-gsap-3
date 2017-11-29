@@ -25,6 +25,11 @@
     color: #777; }
     .btn-white::after {
       background-color: white; }
+  .btn-green {
+    background-color: #29b680;
+    color: white; }
+    .btn-green::after {
+      color: white; }
   .btn-animated {
     animation: moveInBottom .5s ease-out .75s;
     animation-fill-mode: backwards; }
