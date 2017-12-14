@@ -363,3 +363,274 @@ $button-grey:#777;
     }
 }
 ```
+
+# Creating a Button Component using React, Classnames and SCSS
+
+The following provides a Pseudo-code on how to leverage the power of `SASS`, using `React`, `Classnames` and `SCSS`:
+
+
+1. Our Button Component is fairly simple, with just minimal line of code.
+> `button.jsx`
+
+```js
+import React, {Component} from 'react';
+import classnames from 'classnames';
+import './button.css';
+class Button extends Component{
+
+    constructor(props,context){
+        super(props,context);
+    }//end:constructor
+
+    render(){
+        const {text,color} = this.props;
+        let buttonClass = classnames({
+            'btn':true,
+            'btn-animated':true,
+            'btn-white':color=='white',
+            'btn-green':color=='green',
+            'btn-blue':color=='blue',
+            'btn-red':color=='red',
+            'btn-gold':color=='gold',
+        })
+        return(
+            <a href="#" className={buttonClass}>{text}</a>
+        );
+    }//end:render
+
+}//end:Button
+
+export default Button;
+```
+
+
+2. All the main Animation, Styling and Layout of the Button, happens in the `button.scss` file:
+
+> `button.scss`
+
+```scss
+$button-grey:#777;
+$button-green: rgb(41, 182, 128);
+$button-blue: rgb(39, 112, 214);
+$button-red: rgb(201, 24, 24);
+$button-gold: rgb(236, 178, 76);
+
+
+//Pseudo-class are special state of a selector
+.btn{    
+    position: relative; // We are making the button relative so that the pseudo-element can be absolute and behind this button                  
+    margin-top: 20px;
+    display: inline-block;
+    padding:10px 40px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    text-decoration: none;
+              
+    //:link is a special state of the button selector        
+    &:link{
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+    //:visited is a special state of the button selector
+    &:visited{ 
+        transition: all .2s; // Since this is the default state - we are telling to animate by default HERE !!                       
+    }
+    &:hover{
+        transform: translateY(-4px);
+        box-shadow: 0 10px 20px rgba(0,0,0,.2);//offset in the x y direction, blur,
+        &::after{
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }//end:hover
+    &:active{
+        transform: translateY(-2px);
+        box-shadow: 0 5px 5px rgba(0,0,0,.2);//offset in the x y direction, blur,
+    }
+
+    //NOTE: This is the place where you add new colors, to button element
+    &-white{
+        background-color: white;
+        color: $button-grey;
+        &::after{
+            background-color: white;            
+        }    
+    }//end:-white
+
+    &-green{
+        background-color: $button-green;
+        color: white;
+        &::after{
+            background-color: $button-green;
+            color: white;            
+        }    
+    }//end:-green
+
+    &-blue{
+        background-color: $button-blue;
+        color: white;
+        &::after{
+            background-color: $button-blue;
+            color: white;            
+        }    
+    }//end:-blue
+
+    &-red{
+        background-color: $button-red;
+        color: white;
+        &::after{
+            background-color: $button-red;
+            color: white;            
+        }    
+    }//end:-red
+
+    &-gold{
+        background-color: $button-gold;
+        color: white;
+        &::after{
+            background-color: $button-gold;
+            color: white;            
+        }    
+    }//end:-gold
+
+    //Place where you add new colors, to button element - ends here
+
+    &-animated{
+        animation: moveInBottom .5s ease-out .75s; 
+        animation-fill-mode: backwards; //It will automatically apply the styles 0% before the animation begins
+    }//end:-animated
+
+    //Pseudo element - virtual elements needs a content AND display property
+    //By Default the content inside the after pseudo-element is treated as a CHILD of the enclosing element
+    &::after{
+        content:"";
+        display: inline-block;
+        width: 100%; // This makes the virtual element the same dimension as that of the parent element.
+        height: 100%;
+        border-radius: 100px;
+        position: absolute;
+        top:0;
+        left:0;
+        z-index: -1; //Commenting this line, you will see that it's ahead of the button :)
+        transition: all .4s; //since this is the initial virtual dom state
+    }//end::after
+}//end:.btn
+
+@keyframes moveInBottom {
+    0%{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100%{
+        opacity: 1;        
+        transform: translate(0);
+    }
+}
+```
+
+# Partials using SCSS
+
+Partials are files which contain intermediate code to be used in the project. SASS Identifies Partials using the `@import` command:
+
+1. Create a folder in your SASS project > `sass/base/_base.scss`
+1. But to import you simply type as follows:
+
+```scss
+@import "base/base"; //SASS knows that you are looking for the _base.scss partial file.
+```
+
+# Mixins, Not() , Calc() & Attribute Ppty [] in SASS / CSS functionality:
+
+
+The following code provides a comprehensive understanding of all following topics: 
+
+- `Mixins:` Two ways to define and invoke a mixin
+    - `@mixin` mixin-name {}
+    - `@include` mixin-name;
+- `.not()` : the `.not()` functionality in CSS, helps in isolating a particular element
+```scss
+div:not(:last-child){
+        margin-bottom: 10px; // This means apply the margin to all but not the last div
+```
+- `.calc()` : The `.calc()` functionality is a pure CSS function, used to provide mathematical calculations.
+- `[]` selector : The `[]` selector along with the following `wildcards`, can be used to select any element
+    - `^=` : Any attribute which begins with
+    - `*=` : Any attribute which contains
+    - `$=` : Any attribute which ends with
+
+- To create a Mixin, all you have to do is as follows:
+
+> `_mixins.scss`
+
+```scss
+/*
+* author: Pramod AJ
+* date: 29th Nov 2017
+* description: Common mixins will be provided here
+*/
+
+@mixin clearfix {
+    &::after{
+        content:""; //Without the content ppty, a pseudo-element will not appear on the page.
+        display: table; // Standard version of the clearfix
+        clear:both;
+    }
+}//end:clearfix
+```
+
+> `_grid.scss`
+
+```scss
+//NOTE: Remember 10px is 1 rem;
+.row {
+    max-width:$grid-width; //Standard for mordern browsers - 
+    background-color: $color-dull-white; 
+    margin: 0 auto;
+    //Without the not(), this would select the last child, but with not we can continue our original styling
+    //not(:last-child) - Everything, except the last child element
+    &:not(:last-child){
+        margin-bottom: $gutter-vertical;
+    }//end::not
+    // in CSS there is a powerful function called calc()
+    @include clearfix;
+    // with CSS calc() we can mix in units, this is not possible using SASS functions
+    
+    //Attribute selector to apply to all the columns
+    //^= we can select the attributes which start with 
+    //*= we can select the attribute with contain
+    //$= we can select the attribute with end with
+
+    [class^="col-"] {
+        background-color: orangered;
+        float: left;
+        &:not(:last-child){
+            margin-right: $gutter-horizontal;
+        }
+    }//end:[class]
+
+    .col-1-of-2 {
+        width: calc((100% - #{$gutter-horizontal}) / 2);        
+    }//end:.col-1-of-2
+    
+    .col-1-of-3{
+        width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
+    }//end:.col-1-of-3
+
+    .col-1-of-4{
+        width: calc((100% - 3 * #{$gutter-horizontal}) / 4);
+    }//end:.col-1-of-4
+
+    .col-2-of-3{
+        width: calc(2*((100% - 2 * #{$gutter-horizontal}) / 3) + #{$gutter-horizontal});
+    }//end:.col-2-of-3
+
+    .col-2-of-4{
+        width: calc(2*((100% - 3 * #{$gutter-horizontal}) / 4) + #{$gutter-horizontal});
+    }//end:.col-2-of-4
+
+    .col-3-of-4{
+        width: calc(3*((100% - 3 * #{$gutter-horizontal}) / 4) + 2*(#{$gutter-horizontal}));
+    }//end:.col-3-of-4
+
+}//end:row
+```

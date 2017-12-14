@@ -1,8 +1,4 @@
-$button-grey:#777;
-$button-green: rgb(41, 182, 128);
-$button-blue: rgb(39, 112, 214);
-$button-red: rgb(201, 24, 24);
-$button-gold: rgb(236, 178, 76);
+@import "../../sass/main";
 
 
 //Pseudo-class are special state of a selector
@@ -105,13 +101,3 @@ $button-gold: rgb(236, 178, 76);
     }//end::after
 }//end:.btn
 
-@keyframes moveInBottom {
-    0%{
-        opacity: 0;
-        transform: translateY(100px);
-    }
-    100%{
-        opacity: 1;        
-        transform: translate(0);
-    }
-}

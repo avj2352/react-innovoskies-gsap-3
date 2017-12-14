@@ -1,0 +1,28 @@
+/*
+* author: Pramod AJ
+* date: 29th Nov 2017
+* description: Font, Type definitions
+*/
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color:#777;  
+  }
+
+//Giving a Gradient H2
+.heading-secondary {
+  display: inline-block;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+  -webkit-background-clip: text; //The background will be seen, only where the text is
+  color: transparent;
+
+  &:hover{
+    transform: skewY(2deg);
+  }
+}//end:heading-secondary

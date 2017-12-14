@@ -1,28 +1,135 @@
+/*
+* author: Pramod AJ
+* date: 29th Nov 2017
+* description: Base SCSS will be provided here
+*/
+/*
+* author: Pramod AJ
+* date: 29th Nov 2017
+* description: This is where all the variables are defined
+*/
+/*
+* author: Pramod AJ
+* date: 29th Nov 2017
+* description: Common functions will be provided here
+*/
+/*
+* author: Pramod AJ
+* date: 29th Nov 2017
+* description: Common mixins will be provided here
+*/
+/*
+* author: Pramod AJ
+* date: 29th Nov 2017
+* description: A place to have common utilities 
+*/
+/*
+* author: Pramod AJ
+* date: 29th Nov 2017
+* description: All Animations will be defined here.
+*/
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px); }
+  60% {
+    transform: translateX(10px); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px); }
+  60% {
+    transform: translateX(-10px); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100px); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+/*
+* author: Pramod AJ
+* date: 29th Nov 2017
+* description: Font, Type definitions
+*/
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777; }
+
+.heading-secondary {
+  display: inline-block;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+  color: transparent; }
+  .heading-secondary:hover {
+    transform: skewY(2deg); }
+
+.row {
+  max-width: 114rem;
+  background-color: #eee;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    background-color: orangered;
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 2rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 2rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 2rem) / 3); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 2rem) / 4); }
+  .row .col-2-of-3 {
+    width: calc(2*((100% - 2 * 2rem) / 3) + 2rem); }
+  .row .col-2-of-4 {
+    width: calc(2*((100% - 3 * 2rem) / 4) + 2rem); }
+  .row .col-3-of-4 {
+    width: calc(3*((100% - 3 * 2rem) / 4) + 2*(2rem)); }
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
+  text-align: center; }
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px; }
+  .App-header {
+    background-color: #222;
+    height: 150px;
+    padding: 20px;
+    color: white; }
+  .App-title {
+    font-size: 1.5em; }
+  .App-intro {
+    font-size: large; }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
