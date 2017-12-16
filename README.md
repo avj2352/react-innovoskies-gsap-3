@@ -96,6 +96,113 @@
 - [Jona's Resource Page](http://codingheroes.io/resources/)
 - [Clippy](bennettfeely.com/clippy/)
 
+# BEM Model (Block__Element--Modifier) Approach:
+
+The BEM Model helps in maintaining low-specificity.
+
+- `Block` - Standalone component that is meaningful on its own
+- `Element` - part of a block that has no standalone meaning
+- `Modifier` - a different version of the block or an element
+
+```css
+.block {
+
+}
+.block__element {
+
+}
+.block__element--modifier {
+
+}
+```
+
+# The 7-1 SASS/LESS Preprocessor Pattern
+
+The `7 folders/partials` for good SASS Architecture are as follows
+
+- base/
+- components/
+- layout/
+- pages/
+- themes/
+- abstracts/
+- vendors/
+
+and one `main.scss` to import all the partials
+
+```scss
+@import base/base;
+@import components/components;
+@import layout/layout;
+@import pages/pages;
+@import themes/themes;
+@import abstracts/abstracts;
+@import vendors/vendors;
+```
+
+# Mixins, Extends and Functions
+
+## Mixins
+
+---
+
+- `Mixins`: Reusable code
+
+```scss
+
+//Defining a mixin
+@mixin clearfix {
+    &::after {
+        content: "";
+        clear:both;
+        display:table;
+    }
+}
+
+@include clearfix;  //Using the mixin
+
+```
+
+## Functions
+
+---
+
+- `Functions`: Funtions unlike mixins can only be used for mathematical return values.
+
+```scss
+
+//Defining a function
+@function divide ($a,$b) {
+    @return $a / $b ;
+}
+
+divide (60,2) * 1px; // The best practice in SASS/CSS is to multiple your values with 1px/em/rem;
+```
+
+## Extend
+
+---
+
+- `Extend`: An `extend` does the opposite of a mixin. It copies the selector into the extend defintion. (Mixin copies the css properties into the selector)
+
+```scss
+//Defining a mixin
+%clearfix {
+    &::after {
+        content: "";
+        clear:both;
+        display:table;
+    }
+}
+
+.btn {
+    &:link {
+        @extend %clearfix;  //Using the mixin
+    }
+}
+
+```
+
 # Background Cover and Clip Path
 
 > NOTE: If you are working on CSS with background-images in a `React` application. Then Put all CSS related assets within the `src`.

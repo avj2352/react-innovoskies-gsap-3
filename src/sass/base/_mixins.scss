@@ -11,3 +11,10 @@
         clear:both;
     }
 }//end:clearfix
+
+@mixin style-link-text($color) { // @include style-link-text($color-text-light);
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $color;
+}//end:style-link-text
+

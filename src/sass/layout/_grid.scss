@@ -1,8 +1,9 @@
 //NOTE: Remember 10px is 1 rem;
 .row {
-    border:1px solid red;
+    // border:1px solid red;
     max-width:$grid-width; //Standard for mordern browsers - 
-    background-color: $color-dull-white; 
+    // background-color: $color-dull-white; 
+    padding: 0 15px;
     margin: 0 auto;
     //Without the not(), this would select the last child, but with not we can continue our original styling
     //not(:last-child) - Everything, except the last child element
@@ -19,7 +20,7 @@
     //$= we can select the attribute with end with
 
     [class^="col-"] {
-        background-color: orangered;
+        // background-color: orangered;
         float: left;
         &:not(:last-child){
             margin-right: $gutter-horizontal;

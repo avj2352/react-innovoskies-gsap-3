@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import classnames from 'classnames';
-import './button.css';
-class Button extends Component{
+import './button-primary.css';
+class ButtonPrimary extends Component{
 
     constructor(props,context){
         super(props,context);
@@ -23,6 +23,6 @@ class Button extends Component{
         );
     }//end:render
 
-}//end:Button
+}//end:ButtonPrimary
 
-export default Button;
+export default ButtonPrimary;

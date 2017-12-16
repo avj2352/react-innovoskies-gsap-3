@@ -21,8 +21,29 @@ body {
   background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
   -webkit-background-clip: text; //The background will be seen, only where the text is
   color: transparent;
+  transition:all .2s;
 
   &:hover{
-    transform: skewY(2deg);
+    // transform: skewY(2deg) skewX(15deg) scale(1.1);
+    transform: scale(1.1);
+    text-shadow: .5rem 1rem 2rem rgba($color-black,.2);
   }
 }//end:heading-secondary
+
+
+.section-about {  
+  p.sub-heading {
+      font-size: 1.2rem;
+  }
+
+  h3.heading-tertiary {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  p.paragraph {
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+}//end:about-us section
