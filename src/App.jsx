@@ -5,6 +5,7 @@ import Header from './components/header/Header';
 import Section from './components/section/section';
 import AboutSection from './components/about-section/about-section';
 import FeatureSection from './components/feature-section/feature-section';
+import ToursSection from './components/tours-section/tours-section';
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
           <main>
               <AboutSection></AboutSection>
               <FeatureSection></FeatureSection>
+              <ToursSection></ToursSection>
           </main>
       </div>
     );

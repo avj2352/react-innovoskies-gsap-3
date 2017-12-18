@@ -139,7 +139,7 @@ body {
 
 .feature-section {
   position: relative;
-  top: -6rem;
+  top: -16rem;
   padding: 20rem 0;
   background-image: linear-gradient(to right, rgba(126, 213, 111, 0.8), rgba(40, 180, 131, 0.8)), url("./../../assets/img/innovoskies-background-image.jpg");
   background-size: cover;
