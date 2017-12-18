@@ -4,6 +4,7 @@ import './App.css';
 import Header from './components/header/Header';
 import Section from './components/section/section';
 import AboutSection from './components/about-section/about-section';
+import FeatureSection from './components/feature-section/feature-section';
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
           <Header></Header>
           <main>
               <AboutSection></AboutSection>
+              <FeatureSection></FeatureSection>
           </main>
       </div>
     );

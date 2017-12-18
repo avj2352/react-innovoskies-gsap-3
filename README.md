@@ -19,7 +19,7 @@
 
 - [Webiste by Sarah Drasner](https://sarahdrasnerdesign.com/#about)
 - [SVG Animation Course](https://www.lynda.com/Web-Development-tutorials/Paths-groups/604272/621322-4.html?srchtrk=index%3a5%0alinktypeid%3a2%0aq%3agsap%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2)
-- [CodePen Anthony Dugois SVG Curves and Paths learning tool]()
+- [Linea Icons Library](http://linea.io/)
 
 # Libraries
 

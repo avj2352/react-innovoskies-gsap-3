@@ -1,6 +1,8 @@
 import React,{Component} from 'react';
 import classnames from 'classnames';
+//Components
 import ButtonSecondary from './../buttons/button-secondary/button-secondary';
+import ImageComposition from './../image-composition/image-composition';
 import './about-section.css';
 
 class AboutSection extends Component{
@@ -19,7 +21,7 @@ class AboutSection extends Component{
                         <ButtonSecondary text="Learn more &rarr;"></ButtonSecondary>                        
                     </div>
                     <div className="col-1-of-2">
-                        Image Composition
+                        <ImageComposition></ImageComposition>
                     </div>
                 </div>
             </section>
