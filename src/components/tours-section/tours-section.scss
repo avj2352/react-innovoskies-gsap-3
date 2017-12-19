@@ -5,3 +5,31 @@
     background-color: $color-dull-white;
     padding: 15rem 0 25rem;
 }//end:tours-section
+
+
+//Rotating 
+.card {
+    //Let's define the perspective for 3d rotation
+    perspective: 150rem; //This will be the parent element. Not supported in firefox
+    -moz-perspective: 150rem;
+
+    
+
+    &__side {
+        background-color: orangered;
+        height: 50rem;
+        transition: all .8s;
+
+        &--front {  
+            background-color: white;
+        }//end:front
+
+        &--back {
+            background-color: green;
+        }//end:back
+    }//end:side
+
+    &:hover &__side {
+        transform: rotateY(-180deg);
+    }
+}//end:card

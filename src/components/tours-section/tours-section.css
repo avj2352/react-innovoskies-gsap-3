@@ -141,3 +141,17 @@ body {
   margin-top: -25rem;
   background-color: #eee;
   padding: 15rem 0 25rem; }
+
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem; }
+  .card__side {
+    background-color: orangered;
+    height: 50rem;
+    transition: all .8s; }
+    .card__side--front {
+      background-color: white; }
+    .card__side--back {
+      background-color: green; }
+  .card:hover .card__side {
+    transform: rotateY(-180deg); }
