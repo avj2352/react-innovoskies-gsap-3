@@ -144,14 +144,34 @@ body {
 
 .card {
   perspective: 150rem;
-  -moz-perspective: 150rem; }
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 42rem; }
   .card__side {
     background-color: orangered;
-    height: 50rem;
-    transition: all .8s; }
+    height: 40rem;
+    transition: all .8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    padding: 5px 15px; }
     .card__side--front {
-      background-color: white; }
+      background-color: #fff;
+      color: #28b485; }
     .card__side--back {
-      background-color: green; }
-  .card:hover .card__side {
+      color: white;
+      transform: rotateY(180deg); }
+      .card__side--back-1 {
+        background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+        background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+      .card__side--back-2 {
+        background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
+      .card__side--back-3 {
+        background-image: linear-gradient(to right bottom, #2998ff, #5643fa); }
+  .card:hover .card__side--front {
     transform: rotateY(-180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0); }

@@ -11,6 +11,7 @@ class ToursSection extends Component {
                 </div>
                 {/* Simple row */}
                 <div className="row">
+                    {/* FIRST SECTION */}
                     <div className="col-1-of-3">
                     {/* Card Component */}
                         <div className="card">
@@ -19,19 +20,37 @@ class ToursSection extends Component {
                                 FRONT SIDE OF THE CARD
                             </div>
                             {/* Back side of the card */}
-                            <div className="card__side card__side--back">
+                            <div className="card__side card__side--back card__side--back-1">
                                 BACK SIDE OF THE CARD
                             </div>
                         </div>
                     </div>
+                    {/* SECOND SECTION */}
                     <div className="col-1-of-3">
+                        {/* Card Component */}
                         <div className="card">
-                        Rotating Card
+                            {/* Front side of the card */}
+                            <div className="card__side card__side--front">
+                                FRONT SIDE OF THE CARD
+                            </div>
+                            {/* Back side of the card */}
+                            <div className="card__side card__side--back card__side--back-2">
+                                BACK SIDE OF THE CARD
+                            </div>
                         </div>
                     </div>
+                    {/* THIRD SECTION */}
                     <div className="col-1-of-3">
+                        {/* Card Component */}
                         <div className="card">
-                        Rotating Card
+                            {/* Front side of the card */}
+                            <div className="card__side card__side--front">
+                                FRONT SIDE OF THE CARD
+                            </div>
+                            {/* Back side of the card */}
+                            <div className="card__side card__side--back card__side--back-3">
+                                BACK SIDE OF THE CARD
+                            </div>
                         </div>
                     </div>
                 </div>
