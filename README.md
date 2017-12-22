@@ -741,3 +741,7 @@ div:not(:last-child){
 
 }//end:row
 ```
+
+# Important statement for the Website
+
+Innovation is in our DNA, and innovation goes hand-to-hand with transformation. So looking at the events in 2017 as well as our plans for the future, you can count 100% on this common denominator. In fact, there are three strong common denominators that bonds us: meaningful INNOVATION, our determination to serve our CUSTOMERS and the conviction to make bets in our TEAMS.
